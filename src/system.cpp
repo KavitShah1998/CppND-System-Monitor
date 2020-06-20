@@ -22,7 +22,8 @@ Processor& System::Cpu() { return cpu_; }
 vector<Process>& System::Processes() { 
     processes_.clear();
     std::vector<int> pids = LinuxParser::Pids();
-    for(int i = 0; i <pids.size(); i++){
+
+    for(size_t i = 0; i <pids.size(); i++){
 
         Process* P = new Process(pids[i]);
         processes_.push_back(*P);
