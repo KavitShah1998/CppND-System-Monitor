@@ -394,7 +394,7 @@ long LinuxParser::UpTime(int pid) {
   }
   uptime = std::stol(data,nullptr,10);
 
-=======
+
 
   double total_mem_used {0}, non_cached_OR_buffer_mem{0}, buffers{0}, cached_mem{0}, swap{0};
   float perc_mem_used{0.0};
@@ -715,6 +715,6 @@ long LinuxParser::UpTime(int pid) {
     }
   }
   uptime = std::stol(data,nullptr,10);
->>>>>>> 31d8f3ee6b8d93eeaf315cb5079d3243cbca295d
+
   return uptime;
  }
