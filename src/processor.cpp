@@ -12,7 +12,7 @@ float Processor::Utilization() {
 
     float cpu_util{0.0f};
 
-    for(int i=0; i<cpu_data_string.size(); i++){
+    for(size_t i=0; i<cpu_data_string.size(); i++){
         cpu_data.push_back(std::stol(cpu_data_string[i], nullptr,10));
     }
 
@@ -20,6 +20,9 @@ float Processor::Utilization() {
     double nicetime{cpu_data[1]/1.0};
     double systemalltime{(cpu_data[2] + cpu_data[5] + cpu_data[6])/1.0};
     double steal{cpu_data[7]/1.0};
+
+    //double virtalltime{(cpu_data[8] + cpu_data[9])/1.0};
+
     double virtalltime{(cpu_data[8] + cpu_data[9])/1.0};
 
     idle_time_ = cpu_data[3] + cpu_data[4];
