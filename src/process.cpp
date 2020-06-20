@@ -42,7 +42,14 @@ string Process::Ram() { return LinuxParser::Ram(pid_); }
 string Process::User() { return LinuxParser::User(pid_); }
 
 // Return the age of this process (in seconds)
+
+long int Process::UpTime() { 
+    long uptime = LinuxParser::UpTime(pid_) / sysconf(_SC_CLK_TCK); 
+    return uptime;
+    }
+
 long int Process::UpTime() { return LinuxParser::UpTime(pid_); }
+
 
 // Overload the "less than" comparison operator for Process objects
 bool Process::operator< ( Process const& a) const {
