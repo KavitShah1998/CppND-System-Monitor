@@ -71,7 +71,7 @@ vector<int> LinuxParser::Pids() {
 float LinuxParser::MemoryUtilization() { 
   std::unordered_map<string,int> mem_data_keys{{"MemTotal",0}, {"MemFree",1}, {"Buffers",2} , {"Cached",3}, {"SReclaimable",4}, {"Shmem",5}, {"SwapTotal",6}, {"SwapFree",7}};  // the HashMap data is (key): (index for value to be searched in "mem_data_values") This would also simplify searching in the while loop below
   std::vector<double> mem_data_values(8, 0);
-<<<<<<< HEAD
+
 
   double total_mem_used {0};
   //double  non_cached_OR_buffer_mem{0}, swap{0}, buffers{0}, cached_mem{0};
